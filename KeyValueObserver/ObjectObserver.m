@@ -21,7 +21,7 @@ static void* const ObjectObserverContext = (void *)&ObjectObserverContext;
 
 @interface Observer: NSObject
 
-@property(nonatomic, assign) id target;
+@property(nonatomic, weak) id target;
 @property(nonatomic, assign) SEL action;
 @property(nonatomic, copy) NSString *keyPath;
 @property(nonatomic, weak) NSObject *observedObject;

@@ -13,7 +13,8 @@
 
 @interface ViewController ()
 
-@property(nonatomic, weak) IBOutlet UILabel *testlabel;
+@property(nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property(nonatomic, weak) IBOutlet UILabel *emailLabel;
 @property(nonatomic, weak) IBOutlet UIButton *requestButton;
 @property(nonatomic, strong) ObjectObserver *observer;
 @property(nonatomic, strong) ViewModel *viewModel;
@@ -33,9 +34,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
-  
-//  [self.observer observeObject:self.viewModel keyPath:@"testLabelText" action:@selector(updateUI:)];
-  [self.observer bindObject:self.viewModel withKeypath:@"testLabelText" toObject:self.testlabel toKeyPath:@"text"];
+    
+  [self.observer observeObject:self.viewModel keyPath:SafeKey(ViewModel, name) action:@selector(nameChanged:)];
+  [self.observer bindObject:self.viewModel withKeypath:SafeKey(ViewModel, email) toObject:self.emailLabel toKeyPath:SafeKey(UILabel, text)];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -45,14 +46,14 @@
   [self.observer invalidate];
 }
 
-- (void)updateUI:(NSDictionary *)dictionary
+- (void)nameChanged:(NSDictionary *)changeDictionary
 {
-  self.testlabel.text = dictionary[NSKeyValueChangeNewKey];
+  self.nameLabel.text = changeDictionary[NSKeyValueChangeNewKey];
 }
 
 - (IBAction)request:(id)sender
 {
-  self.viewModel.testLabelText = @"It has been changed";
+  [self.viewModel request];
 }
 
 @end

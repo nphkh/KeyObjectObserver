@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef DEBUG
+#define SafeKey(class, key)              ([(class *)nil key] ? @#key : @#key)
+#define ProtocolKey(protocol, key)   ([(id <protocol>)nil key] ? @#key : @#key)
+#else
+#define SafeKey(class, key)              @#key
+#define ProtocolKey(class, key)      @#key
+#endif
+
 @interface ObjectObserver : NSObject
 
 - (instancetype)initWithTarget:(id)target;

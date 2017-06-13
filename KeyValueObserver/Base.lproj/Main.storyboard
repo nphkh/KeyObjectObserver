@@ -34,19 +34,29 @@
                                     <action selector="request:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHx-3P-xKN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqT-wq-4wJ">
+                                <rect key="frame" x="15" y="149" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ixA-tB-Pjz" secondAttribute="trailing" constant="15" id="37w-Uq-N0f"/>
+                            <constraint firstItem="uqT-wq-4wJ" firstAttribute="top" secondItem="ixA-tB-Pjz" secondAttribute="bottom" constant="8" id="8Xg-ni-cOg"/>
                             <constraint firstAttribute="trailing" secondItem="HVK-Ok-8g9" secondAttribute="trailing" constant="50" id="K2O-YP-tfY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HVK-Ok-8g9" secondAttribute="bottom" constant="50" id="SNp-bF-LJM"/>
+                            <constraint firstItem="uqT-wq-4wJ" firstAttribute="leading" secondItem="ixA-tB-Pjz" secondAttribute="leading" id="Xns-xf-D6D"/>
                             <constraint firstItem="ixA-tB-Pjz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Zc6-6J-0Uu"/>
                             <constraint firstItem="HVK-Ok-8g9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="bcN-iE-MCb"/>
                             <constraint firstItem="ixA-tB-Pjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="cbh-G8-PvI"/>
+                            <constraint firstItem="uqT-wq-4wJ" firstAttribute="trailing" secondItem="ixA-tB-Pjz" secondAttribute="trailing" id="jmC-1v-hYU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testlabel" destination="ixA-tB-Pjz" id="fOC-QR-mfr"/>
+                        <outlet property="emailLabel" destination="uqT-wq-4wJ" id="wyW-I2-2Wu"/>
+                        <outlet property="nameLabel" destination="ixA-tB-Pjz" id="KzE-N7-d2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

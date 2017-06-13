@@ -10,4 +10,10 @@
 
 @implementation ViewModel
 
+- (void)request
+{
+  self.email = @"This email has been changed";
+  self.name = @"This name has been changed";
+}
+
 @end

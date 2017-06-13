@@ -10,6 +10,9 @@
 
 @interface ViewModel : NSObject
 
-@property(nonatomic, strong) NSString *testLabelText;
+@property(nonatomic, strong) NSString *email;
+@property(nonatomic, strong) NSString *name;
+
+- (void)request;
 
 @end
